@@ -2,7 +2,7 @@
 # Project Name
 Long Description about project. This project do that. This project is awesome...
 ## Team members
-1. Varun Subramanian[Embed personal github URL]
+1. Varun Subramanian [Embed personal github URL]
 2. Abhiram Krishna [Embed perosnal github URL]
 3. Aneena Arshad [Embed perosnal github URL]
 4. Bharath Krishnan [Embed perosnal github URL]
