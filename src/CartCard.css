@@ -1,4 +1,16 @@
-.body{
-    display: flex;
-    flex-direction: row;
+.cartcard{
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    top: 100px;
+}
+.desc{
+    border: none;
+}
+
+.del{
+    border: none;
+}
+
+.img{
+    border: none;
 }

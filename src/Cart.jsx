@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
 import CartCard from './CartCard';
+import './Cart.css';
 
 
 const cart=[
@@ -36,7 +37,7 @@ const cart=[
 
 const Cart = () => {
   return (
-    <div>
+    <div className='cart'>
         <Navbar expand="lg" className="bg-body-tertiary ">
     <Container fluid >
       <Navbar.Brand href='./home'>Site Name</Navbar.Brand>
@@ -47,7 +48,7 @@ const Cart = () => {
       </Navbar.Collapse>
     </Container>
   </Navbar>
-  <Row xs={1} md={2} className="g-4">
+  <Row xs={1} md={3} className="g-4">
       {cart.map((p, idx) => (
         <Col key={idx}>
           <CartCard name={p.name} price={p.price} description={p.description}/> 
