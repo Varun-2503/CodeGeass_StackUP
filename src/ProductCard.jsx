@@ -1,19 +1,33 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import { Col, Row } from 'react-bootstrap';
+import "./ProductCard.css"
 
 const ProductCard = ({name,price,description}) => {
   return (
-        <Card style={{width:'300px'}}>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>{description}
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Price:{price}</small>
-        </Card.Footer>
+    <div>
+    <Row>
+      <Col>
+    <Card bg='dark' className='img' style={{ width: '18em', paddingLeft:'10px'}}>
+      
+      <Card.Img variant="top" src="holder.js/100px180"/>
+      <Card.Text>{name}</Card.Text>
+    </Card>
+      </Col>
+      <Col>
+      <Card className="info" bg="dark" text='white' style={{ width: '92%', textAlign:'right'}} >
+      <Card.Body>
+            <Card.Title>{description}</Card.Title>
+            <Card.Text >
+              Price:{price}
+            </Card.Text>
+            <Button variant="danger" href='/cart'>Add To Cart</Button>
+      </Card.Body>
       </Card>
+      </Col>
+      </Row>
+    </div>
 
   )
 }

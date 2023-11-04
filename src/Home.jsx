@@ -28,15 +28,24 @@ const products=[
     img:'',
     price:'3244',
     description:'Womens shoe'
+  },
+  {
+    name: 'rtx',
+    category: 'gpu',
+    img:'',
+    price:'1234',
+    description:'fast as fk boi'
+
   }
+
 ]
 
 const Home = () => {
   return (
-    <div >
-    <Navbar expand="lg" className="bg-body-tertiary ">
+    <div className='homepg'>
+    <Navbar bg='dark' expand="lg" className="bg-body-tertiary" style={{ backgroundColor:"#212529"}}>
     <Container fluid >
-      <Navbar.Brand >Site Name</Navbar.Brand>
+      <Navbar.Brand className='nav'>Site Name</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll" className='home-navbar'>
       
@@ -44,7 +53,7 @@ const Home = () => {
       </Navbar.Collapse>
     </Container>
   </Navbar>
-  <Row xs={1} md={4} className="g-4">
+  <Row xs={1} md={2} className="g-4">
       {products.map((p, idx) => (
         <Col key={idx}>
           <ProductCard name={p.name} price={p.price} description={p.description}/> 
