@@ -1,4 +1,6 @@
 import React from 'react'
+import client from './App.jsx'
+import { useState,useEffect } from 'react';
 import "./Home.css";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -6,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductCard from './ProductCard';
 import { Col, Row } from 'react-bootstrap';
+
 
 const products=[
   {
@@ -41,6 +44,52 @@ const products=[
 ]
 
 const Home = () => {
+  const [currentUser, setCurrentUser] = useState();
+  const [username,setUsername]=useState('');
+
+  useEffect(() => {
+    client.get("/user")
+    .then(function(res) {
+      setCurrentUser(true);
+    })
+    .catch(function(error) {
+      setCurrentUser(false);
+    });
+  }, []);
+
+  function submitLogout(e) {
+    e.preventDefault();
+    client.post(
+      "/logout",
+      {withCredentials: true}
+    ).then(function(res) {
+      setCurrentUser(false);
+    });
+  }
+  
+  if (currentUser) {
+    return (
+      <div>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand>Authentication App</Navbar.Brand>
+            <Navbar.Toggle />
+            <Navbar.Collapse className="justify-content-end">
+              <Navbar.Text>
+                <form onSubmit={e => submitLogout(e)}>
+                  <Button type="submit" variant="light">Log out</Button>
+                </form>
+              </Navbar.Text>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+          <div className="center">
+            <h2>You're logged in!</h2>
+          </div>
+        </div>
+    );
+  }
+
   return (
     <div className='homepg'>
     <Navbar bg='dark' expand="lg" className="bg-body-tertiary" style={{ backgroundColor:"#212529"}}>
