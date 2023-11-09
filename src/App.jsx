@@ -1,10 +1,11 @@
 import React from 'react';
 import "./App.css";
+import backgroundimage from '/home/bgpwolli/Downloads/loginimg.jpeg';
 
 const App = () => {
   
   return (
-    <div className='login'>
+    <div className='login' >
       
       <div className="wrapper">
     <div className="login-box">
@@ -27,6 +28,7 @@ const App = () => {
                 <p>Don't have an account?<a href="/register" className="register-link">Register</a></p>
             </div>
         </form>
+        
     </div>
 </div></div>
   )

@@ -6,39 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductCard from './ProductCard';
 import { Col, Row } from 'react-bootstrap';
-
-const products=[
-  {
-    name: 'shoes',
-    category: 'Men',
-    img:'',
-    price: '345',
-    description:'Mens shoe'
-  },
-  {
-    name: 'watch',
-    category: 'Women',
-    img:'',
-    price:'1234',
-    description: 'Womens Watch'
-  },
-  {
-    name: 'shoes',
-    category: 'Women',
-    img:'',
-    price:'3244',
-    description:'Womens shoe'
-  },
-  {
-    name: 'rtx',
-    category: 'gpu',
-    img:'',
-    price:'1234',
-    description:'fast as fk boi'
-
-  }
-
-]
+import products from './Products';
 
 const Home = () => {
   return (
@@ -56,7 +24,7 @@ const Home = () => {
   <Row xs={1} md={2} className="g-4">
       {products.map((p, idx) => (
         <Col key={idx}>
-          <ProductCard name={p.name} price={p.price} description={p.description}/> 
+          <ProductCard  id={p.id} name={p.name} price={p.price} description={p.description} img={p.img}/> 
            {/* evide aan values pass cheyende response from db */}
         </Col>
       ))}

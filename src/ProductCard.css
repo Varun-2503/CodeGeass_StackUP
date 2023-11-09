@@ -1,3 +1,8 @@
 .info{
     border: none;
 }
+
+.cls1{
+    display: flex;
+    justify-content: space-between;
+}

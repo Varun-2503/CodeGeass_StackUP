@@ -9,6 +9,8 @@ import {
 import Home from './Home.jsx';
 import Register from './Register.jsx';
 import Cart from './Cart.jsx';
+import ProductDetail from './ProductDetail.jsx';
+import products from './Products.jsx';
 
 
 
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
       { 
         path:"cart",
         element:<Cart />
+      },
+      {
+        path: 'product/:productId', 
+        element: <ProductDetail products={products} />, 
       },
       {
         path: "",
