@@ -6,13 +6,28 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-axios.defaults.xsrfCookieName='csrftoken';
-axios.defaults.xsrfHeaderName='X-CSRFToken';
-axios.defaults.withCredentials=true;
+// axios.defaults.xsrfCookieName='csrftoken';
+// axios.defaults.xsrfHeaderName='X-CSRFToken';
+// axios.defaults.withCredentials=true;
 
-const client=axios.create({
-  baseURL:"https://127.0.0.1:8000"
-});
+const baseURL="https://127.0.0.1:8000"
+
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+}
+const csrftoken = getCookie('csrftoken');
 
 const App = () => {
 
@@ -25,9 +40,14 @@ const App = () => {
 
 function submitLogin(e) {
   e.preventDefault();
-  client.post(
-    "/login",
+  fetch(
+    `${baseURL}/login`,
     {
+      method:'POST',
+      mode:"cors",
+      headers: {
+        'X-CSRFToken': csrftoken
+      },
       email: email,
       password: password
     }

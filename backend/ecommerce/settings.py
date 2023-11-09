@@ -58,6 +58,10 @@ CORS_ALLOWED_ORIGINS=[
     'http://localhost:5173'
 ]
 
+CSRF_TRUSTED_ORIGINS=[
+    'http://localhost:5173'
+]
+
 ROOT_URLCONF = 'ecommerce.urls'
 
 TEMPLATES = [
@@ -140,3 +144,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS=["http://localhost:5173"]
