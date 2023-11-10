@@ -2,8 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-# from addpost.models import Blog
-# from addpost.forms import BlogForm
+from products.models import Products
 def home(request):
     return render(request, 'authentication/home.html')
 
@@ -13,26 +12,24 @@ def signin(request):
         username = request.POST['username']
         password = request.POST['password']
     
-        # blogs = Blog.objects.all().order_by('-created_on')
-        # form = BlogForm()
+        prod = Products.objects.all()
         context = {
-            'blog_list' : "blogs",
-            'form' :"form",
-            'name': request.user
+            'product_list' : prod,
+            'name' :request.user
         }
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request,user)
-            return render(request, 'addpost/blogindex.html', context)
+            return render(request, 'products/index.html', context)
 
 
         else:
             messages.error(request, "Wrong Credentials")
-            return redirect('signin')
+            return redirect('/signin')
 
 
 
-    return render(request, 'authentication/signin.html')
+    return render(request, 'authentication/app.html')
 
 
 
@@ -42,12 +39,11 @@ def signup(request):
     if request.method == "POST":
 
         username = request.POST['username']
-        name = request.POST['name']
         password = request.POST['password']
 
         if User.objects.filter(username=username):
             messages.error(request, "Username already exist!")
-            return redirect('/signup')
+            return redirect('/signin')
         
         
         if len(username)>10:
@@ -62,14 +58,14 @@ def signup(request):
 
 
         myuser = User.objects.create_user(username,' ',password)
-        myuser.first_name = name
+        myuser.first_name = username
         myuser.save()
 
         messages.success(request, "Your account created successfully")
 
-        return redirect('signin')
+        return redirect('/signin')
 
-    return render(request, 'authentication/signup.html')
+    return render(request, 'authentication/register.html')
 
 
 

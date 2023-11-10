@@ -1,0 +1,178 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Name change </title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    .homepg {
+      padding-top: 20px;
+    }
+
+    .card {
+      border: none;
+    }
+
+    .navbar .navbar-brand {
+      color: black;
+    }
+
+    .navbar-form {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .collapse {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary" style="background-color: #212529;">
+    <div class="container-fluid">
+      <a class="navbar-brand nav">Site Name</a>
+      <form action="/product/search" method="post">
+        {% csrf_token %} 
+        <select name="category" id="category">
+
+            <option value="Tees">T-shirt</option>
+            <option value="Figurines">Figurines</option>
+            <option value="Posters">Posters</option>
+            
+          </select>
+          <select name="anime" id="anime">
+            <option value="OnePiece">OnePiece</option>
+            <option value="Bleach">Bleach</option>
+            <option value="AttackOnTitan">AttackOnTitan</option>
+            <option value="Baki">Baki</option>
+            <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
+            <option value="MHA">MHA</option>
+            <option value="YourName">YourName</option>
+          </select>
+          
+
+        <input type="submit" value="Search">
+    </form>
+      
+      <li><a href="/signout" id="logout">Logout</a></li>
+
+      <div class="collapse navbar-collapse home-navbar" id="navbarScroll">
+        <a class="btn btn-outline-success button" href="/cart">Cart</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Cards -->
+  <div class="container homepg">
+    
+    <div class="row row-cols-1 row-cols-md-2 g-4" id="product-container">
+      <!-- Product cards will be dynamically inserted here -->
+      
+   
+    {% for product in product_list %}
+    <div class="col">
+      <div class="card info" style="width: 92%; text-align: right;">
+        <div class="card-body">
+          <img height="250px" src="{{product.url}}" alt="product">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text">{{product.desc}}</p>
+          <p class="card-text">{{product.categories}}</p>
+          <p class="card-text">{{product.subcategories}}</p>
+          <p class="card-text">Price: {{price_to_add}}</p>
+          
+          <button class="btn btn-danger" >Add To Cart</button>
+        </div>
+      </div>
+    </div>
+    {% endfor %} 
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Optional, if you need Bootstrap JavaScript features) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript for dynamic rendering -->
+  
+
+  <script>
+    // const products = [
+    //   { id: '1', name: 'Shoes', description: 'Mens shoe', price: '345' },
+    //   { id: '2', name: 'Watch', description: 'Womens Watch', price: '1234' },
+    //   { id: '3', name: 'Shoes', description: 'Womens shoe', price: '3244' },
+    //   { id: '4', name: 'RTX', description: 'Fast as fk boi', price: '1234' }
+    // ];
+  
+    // const productContainer = document.getElementById('product-container');
+  
+    // function renderProducts(filteredProducts) {
+    //   // Clear existing products
+    //   productContainer.innerHTML = '';
+  
+    //   filteredProducts.forEach(product => {
+    //     const productCard = `
+    //       <div class="col">
+    //         <div class="card img" style="width: 18em; padding-left: 10px;">
+    //           <img src="holder.js/100px180" class="card-img-top" alt="Product Image">
+    //           <div class="card-body">
+    //             <button class="btn btn-primary details" style="color: white;" onclick="viewDetails('${product.id}')">View Details</button>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       <div class="col">
+    //         <div class="card info" style="width: 92%; text-align: right;">
+    //           <div class="card-body">
+    //             <h5 class="card-title">${product.name}</h5>
+    //             <p class="card-text">${product.description}</p>
+    //             <p class="card-text">Price: $${product.price}</p>
+    //             <button class="btn btn-danger" onclick="addToCart('${product.id}')">Add To Cart</button>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     `;
+  
+    //     productContainer.insertAdjacentHTML('beforeend', productCard);
+    //   });
+    // }
+  
+    // function filterProducts() {
+    //   const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    //   const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchInput));
+    //   renderProducts(filteredProducts);
+    // }
+  
+    // function viewDetails(productId) {
+    //   // Example: Navigate to the product details page
+    //   window.location.href = `/product/${productId}.html`;
+    // }
+  
+    // function addToCart(productId) {
+    //   // Example: Navigate to the cart page
+    //   window.location.href = '/cart.html';
+    // }
+  
+    // // Initial rendering
+    // renderProducts(products);
+  </script>
+
+</body>
+
+</html>

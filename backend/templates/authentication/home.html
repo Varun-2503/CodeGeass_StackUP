@@ -1,52 +1,11 @@
-{% load static %}
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>Home Page</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, Helvetica, sans-serif ;
-            /* background-color: black; */
-        }
-        
-    </style>
+    <title>Document</title>
 </head>
 <body>
-   <header>
-        <div class="wrapper">
-            <div class="logo">Codegeass</div> 
-            
-        <div class="text">
-            <h1>Codegeass</h1>
-            <p>Immerse in this anime experisence</p>
-            <a href="/signup"> Join The Cult </a><br>
-            <a href="/signin" id="log"> Log In</a>
-            {% for message in messages %} 
-            <div class="message-container">
-                <strong> {{message}} </strong>
-                
-            </div>
-            
-            {% endfor %} 
-        </div>
-        
-    
-
-    </header>
-                  
-            
-    
-
+    Code the home page 
 </body>
 </html>

@@ -4,20 +4,20 @@ from django.utils import timezone
 # Create your models here.
 
 categories_choices=(
-    ('t-shirts','Tees'),
-    ('figurines','Figurines'),
-    ('posters','Posters')
+    ('Tees','Tees'),
+    ('Figurines','Figurines'),
+    ('Posters','Posters')
 
 )
 
 anime_choices=(
-    ('one-piece','OnePiece'),
-    ('bleach','Bleach'),
-    ('aot','AttackOnTitan'),
-    ('baki','Baki'),
-    ('jjk','Jujutsu Kaisen'),
-    ('bnha','MHA'),
-    ('yourname','YourName')
+    ('OnePiece','OnePiece'),
+    ('Bleach','Bleach'),
+    ('AttackOnTitan','AttackOnTitan'),
+    ('Baki','Baki'),
+    ('Jujutsu Kaisen','Jujutsu Kaisen'),
+    ('MHA','MHA'),
+    ('YourName','YourName')
 )
 
 class Products(models.Model):
