@@ -1,0 +1,1 @@
+explain each feature of the e commerce app with precision
