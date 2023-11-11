@@ -20,11 +20,11 @@ def signin(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request,user)
-            return render(request, 'authentication/app.html', context)
+            return render(request, 'products/index.html', context)
 
         else:
             messages.error(request, "Wrong Credentials")
-            return redirect('/signin')
+            return redirect('signin')
     return render(request, 'authentication/app.html')
 
 def signup(request):

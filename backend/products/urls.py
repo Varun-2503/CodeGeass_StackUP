@@ -1,5 +1,5 @@
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('/product/search',views.getval, name='search')
+    path('/search',views.getval, name='search')
 ]
