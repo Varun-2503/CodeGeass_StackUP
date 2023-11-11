@@ -9,5 +9,4 @@ urlpatterns = [
     path('signup', views.signup, name="signup"),
     path('signout', views.signout, name="signout")
 
-
 ]

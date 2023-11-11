@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('https://preview.redd.it/anime-shop-read-twitter-thread-v0-99sn2giyodra1.jpg?width=2000&format=pjpg&auto=webp&s=77abae89899379955cb094af7b8b9a17a67da122') center/cover no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      color: #fff;
+      text-align: center;
+    }
+
     .register{
       display: flex;
     flex-direction: column;
@@ -84,9 +93,6 @@
     padding: 0 35px 0 5px;
 }
 
-
-
-
 .register .btn{
     all: unset;
     width: 90%;
@@ -105,16 +111,16 @@
   <div class="register">
     <div class="wrapper">
       <div class="register-box">
-        <h2>Register</h2>
+        <h2 style="color:rgb(255, 255, 255);">Register</h2>
         <form action="/signup" method="post">
           {% csrf_token %} 
           <div class="inputbox">
-            <input name="username" type="name" required/>
-            <label>Username</label>
+            <input style="color:rgb(255, 255, 255);" name="username" type="name" required/>
+            <label style="color:rgb(255, 255, 255);">Username</label>
           </div>
           <div class="inputbox">
-            <input name="password" type="password" required/>
-            <label>Password</label>
+            <input style="color:rgb(255, 255, 255);" name="password" type="password" required/>
+            <label style="color:rgb(255, 255, 255);">Password</label>
           </div>
           <input type="submit" value="Register"  class="btn">
         </form>
@@ -127,6 +133,5 @@
     </div>
 {% endfor %}
   </div>
-
 </body>
 </html>
