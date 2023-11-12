@@ -42,6 +42,9 @@
       margin-bottom: 5px;
       
     }
+    .navbar{
+      height:70px;
+    }
 
     .navbar .navbar-brand {
       color: rgb(77, 1, 1);
@@ -50,20 +53,18 @@
       font-variant: small-caps;
       
     }
+    .navbar .navbar-collapse{
+      
+      margin-left: 2px;
+    }
     .col{
       margin-bottom: 15px;
     }
 
-    .navbar-form {
-     
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
     .collapse {
       display: flex;
-      justify-content: flex-end;
+      justify-content:flex-end;
+      
     }
     
     .card-title{
@@ -80,16 +81,21 @@
     .search-input {
       margin-right: 5px;
     }
+    
   </style>
 </head>
 
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary" style="background-color: #212529">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-body-tertiary" style="background-color: #212529">
    <div class="container-fluid">
       <a class="navbar-brand nav">e-Akihabara</a>
-      <form  class="d-flex" action="/product/search" method="post">
+   </div>
+  </nav>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-body-tertiary" style="background-color: #212529">
+    <div class="container-fluid">
+      <form class=" collapse navbar-collapse home-navbar" action="/product/search" method="post">
         {% csrf_token %} 
         <select name="category" id="category">
 
@@ -97,8 +103,8 @@
             <option value="Figurines">Figurines</option>
             <option value="Posters">Posters</option>
             
-          </select>
-          <select name="anime" id="anime">
+        </select>
+        <select name="anime" id="anime">
             <option value="OnePiece">OnePiece</option>
             <option value="Bleach">Bleach</option>
             <option value="AttackOnTitan">AttackOnTitan</option>
@@ -106,7 +112,7 @@
             <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
             <option value="MHA">MHA</option>
             <option value="YourName">YourName</option>
-          </select>
+        </select>
           
 
         <input type="submit" value="Search">
@@ -114,9 +120,8 @@
       <!-- <li><a class="btn btn-outline-success button" href="/signout" id="logout">Logout</a></li> -->
       <div class="collapse navbar-collapse home-navbar" id="navbarScroll">
         <a class="btn btn-outline-success button" href="/cart.html">Cart</a>
-        <li><a class="btn btn-outline-success button" href="/signout" id="logout">Logout</a></li>
+        <li><a class="btn btn-outline-success button " href="/signout" id="logout">Logout</a></li>
       </div>
-    </div>
   </nav>
 
   <!-- Product Cards -->
