@@ -17,28 +17,45 @@
       font-family: 'Arial', sans-serif;
       background: url('https://preview.redd.it/anime-shop-read-twitter-thread-v0-99sn2giyodra1.jpg?width=2000&format=pjpg&auto=webp&s=77abae89899379955cb094af7b8b9a17a67da122') center/cover no-repeat;
       background-attachment: fixed;
-      background-size: 100% 100%;
-      color: #fff;
+      background-size:100%;
+      color:white;
       text-align: center;
     }
 
     .homepg {
-      padding-top: 25px;
-      margin: 0;
+      padding-top: 40px;
       padding-left: 20px;
+      justify-content: space-around;
+      
     }
 
     .card {
-      border: none;
+      border:#1f2b36;
+      background-color:rgb(253, 241, 223);
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size:large;
+      font-variant:small-caps;
+      color: rgb(109, 10, 10);
       width: 100%;
-      margin: 0;
+      height:100%;
+      margin:0;
+      margin-bottom: 5px;
+      
     }
 
     .navbar .navbar-brand {
-      color: black;
+      color: rgb(77, 1, 1);
+      font-size:100px;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-variant: small-caps;
+      
+    }
+    .col{
+      margin-bottom: 15px;
     }
 
     .navbar-form {
+     
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -48,9 +65,15 @@
       display: flex;
       justify-content: flex-end;
     }
+    
+    .card-title{
+      font-size: 35px;
+      font-family: serif ;
+      color: rgb(139, 0, 0);
+    }
 
     .search-form {
-      display: flex;
+      display:flex;
       align-items: center;
     }
 
@@ -63,10 +86,10 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary" style="background-color: #212529;">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary" style="background-color: #212529">
+   <div class="container-fluid">
       <a class="navbar-brand nav">e-Akihabara</a>
-      <form action="/product/search" method="post">
+      <form  class="d-flex" action="/product/search" method="post">
         {% csrf_token %} 
         <select name="category" id="category">
 
@@ -97,22 +120,21 @@
   </nav>
 
   <!-- Product Cards -->
-  <div class="container homepg">
+  <div class="container homepg ">
     
-    <div class="row row-cols-1 row-cols-md-2 g-4" id="product-container">
+    <div class="row row-cols-1 row-cols-md-3" id="product-container">
       <!-- Product cards will be dynamically inserted here -->
       
    
     {% for product in product_list %}
-    <div class="col">
-      <div class="card info" style="width: 92%; text-align: right;">
+    <div class="col" >
+      <div class="card info" style="width: 92%;text-align: center;">
         <div class="card-body">
-          <img height="250px" src="{{product.url}}" alt="product">
+          <img class="img-thumbnail .img-fluid width: 100% \9" src="{{product.url}}" alt="product">
           <h5 class="card-title">{{product.title}}</h5>
-          <p class="card-text">{{product.desc}}</p>
-          <p class="card-text">{{product.categories}}</p>
-          <p class="card-text">{{product.subcategories}}</p>
-          <p class="card-text">Price: {{product.price}}</p>
+          <p class="card-text1">{{product.desc}}</p>
+          <p class="card-text2">character:{{product.subcategories}}</p>
+          <p class="card-text3">Price: {{product.price}}</p>
           
           <button class="btn btn-danger" >Add To Cart</button>
         </div>
@@ -185,4 +207,7 @@
     // renderProducts(products);
   </script>
 </body>
+<footer>
+  copyright
+</footer>
 </html>
