@@ -51,4 +51,4 @@ def signup(request):
 def signout(request):
     logout(request)
     messages.success(request, 'logout sucess')
-    return redirect('/home')
+    return redirect('/')
