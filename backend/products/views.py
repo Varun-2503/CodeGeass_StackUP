@@ -15,7 +15,7 @@ def getval(request):
     if(request.method == "POST"):
         category = request.POST.get('category')
         anime = request.POST.get('anime')
-        prod = Products.objects.filter(anime=anime,categories = category)
+        prod = Products.objects.filter(subcategories=anime,categories = category)
         context = {
             'product_list' : prod,
             'name' : request.user

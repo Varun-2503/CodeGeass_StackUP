@@ -95,7 +95,7 @@
   </nav>
   <nav class="navbar navbar-expand-sm navbar-dark bg-body-tertiary" style="background-color: #212529">
     <div class="container-fluid">
-      <form class=" collapse navbar-collapse home-navbar" action="/product/search" method="post">
+      <form class=" collapse navbar-collapse home-navbar" action="search" method="post">
         {% csrf_token %} 
         <select name="category" id="category">
 
@@ -119,7 +119,7 @@
     </form>
       <!-- <li><a class="btn btn-outline-success button" href="/signout" id="logout">Logout</a></li> -->
       <div class="collapse navbar-collapse home-navbar" id="navbarScroll">
-        <a class="btn btn-outline-success button" href="/cart.html">Cart</a>
+        <a class="btn btn-outline-success button" href="/cart">Cart</a>
         <li><a class="btn btn-outline-success button " href="/signout" id="logout">Logout</a></li>
       </div>
   </nav>
@@ -152,65 +152,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JavaScript for dynamic rendering -->
   
-  <script>
-    // const products = [
-    //   { id: '1', name: 'Shoes', description: 'Mens shoe', price: '345' },
-    //   { id: '2', name: 'Watch', description: 'Womens Watch', price: '1234' },
-    //   { id: '3', name: 'Shoes', description: 'Womens shoe', price: '3244' },
-    //   { id: '4', name: 'RTX', description: 'Fast as fk boi', price: '1234' }
-    // ];
-  
-    // const productContainer = document.getElementById('product-container');
-  
-    // function renderProducts(filteredProducts) {
-    //   // Clear existing products
-    //   productContainer.innerHTML = '';
-  
-    //   filteredProducts.forEach(product => {
-    //     const productCard = `
-    //       <div class="col">
-    //         <div class="card img" style="width: 18em; padding-left: 10px;">
-    //           <img src="holder.js/100px180" class="card-img-top" alt="Product Image">
-    //           <div class="card-body">
-    //             <button class="btn btn-primary details" style="color: white;" onclick="viewDetails('${product.id}')">View Details</button>
-    //           </div>
-    //         </div>
-    //       </div>
-    //       <div class="col">
-    //         <div class="card info" style="width: 92%; text-align: right;">
-    //           <div class="card-body">
-    //             <h5 class="card-title">${product.name}</h5>
-    //             <p class="card-text">${product.description}</p>
-    //             <p class="card-text">Price: $${product.price}</p>
-    //             <button class="btn btn-danger" onclick="addToCart('${product.id}')">Add To Cart</button>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     `;
-  
-    //     productContainer.insertAdjacentHTML('beforeend', productCard);
-    //   });
-    // }
-  
-    // function filterProducts() {
-    //   const searchInput = document.getElementById('searchInput').value.toLowerCase();
-    //   const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchInput));
-    //   renderProducts(filteredProducts);
-    // }
-  
-    // function viewDetails(productId) {
-    //   // Example: Navigate to the product details page
-    //   window.location.href = `/product/${productId}.html`;
-    // }
-  
-    // function addToCart(productId) {
-    //   // Example: Navigate to the cart page
-    //   window.location.href = '/cart.html';
-    // }
-  
-    // // Initial rendering
-    // renderProducts(products);
-  </script>
 </body>
 <footer>
   copyright
