@@ -1,8 +1,6 @@
 from django import forms
 from .models import Products
 
-
-    
 class Products(forms.ModelForm):
     title = forms.CharField(
         

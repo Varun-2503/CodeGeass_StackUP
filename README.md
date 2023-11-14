@@ -2,37 +2,46 @@
 # e-Akihabara
 It is anknkn
 ## Team members
-1. Varun Subramanian [()]
-2. Abhiram Krishna [Embed perosnal github URL]
-3. Aneena Arshad [Embed perosnal github URL]
-4. Bharath Krishnan [Embed perosnal github URL]
+1. Varun Subramanian [(https://github.com/Varun-2503)]
+2. Abhiram Krishna [(https://github.com/Abhiram-codes)]
+3. Aneena Arshad [(https://github.com/aneena789)]
+4. Bharath Krishnan [(https://github.com/bgpwolli)]
+
 ## Team Id
 codegeass
+
 ## Link to product walkthrough
-[link to video]
+https://drive.google.com/file/d/1fZ037lAK-oYyaSYNa4EpvQzPMcS1yPcK/view?usp=sharing
+
 ## How it Works ?
-1. Explaining the working of project
-2. Embed video of project demo
-also mention you created the front end in react which wecouldn't merge to backend . But completed the whole project with django and html pages 
+1. In the home page of the website, clicking on the "Become an Otaku" will redirect you to the registration page and clicking on the "Login" page will redirect you to the login page. 
+
+2. After registration, you will be automatically redirected to the login page and login using the credentials provided at the registration interface. 
+
+3. Products list will be visible and to filter the customers' interests, we have provided a search filter which enables them to filter out their requirements and products they liked. 
+
+4. A cart button has also been provided, which upon clicked, redirects to the cart page. The backend and frontend of the cart has not been fully integrated yet but the data we enter manually through the database will be displayed in the cart page. 
+
+5. A logout button has also been used to enable current user to logout from the project page. Upon clicked, the logout page will redirect the user to the home page. 
+
+4. Project demo Video : https://drive.google.com/file/d/1fZ037lAK-oYyaSYNa4EpvQzPMcS1yPcK/view?usp=sharing
+
+We tried to create the frontend using React library of JS but we were unable to merge the frontend and backend so hence we tried the whole project using django and html pages. 
+
 ## Libraries used
-### Frontend 
-- React : 
-### Backend  
-- Django :
+
+### Full stack 
+- Django
+
 ## How to configure
 - To configure the main section 
-`cd backend `
-`pip install -r requirements.txt`
 
-- to configure the react part (to check it out )
+- `cd backend `
 
-`cd frontend_react `
-`npm install`
+- `pip install -r requirements.txt`
+
 ## How to Run
 Instructions for running
 
-### main part 
-`python manage.py runserver`
-
-### react part 
-'npm run dev'
+Command to Run
+- `python manage.py runserver`

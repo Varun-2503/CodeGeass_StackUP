@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+import uuid
 # Create your models here.
 
 categories_choices=(
@@ -43,3 +44,10 @@ class Products(models.Model):
 
     def __str__(self):
         return (self.title)
+
+class CartItems(models.Model):
+    product=models.TextField()
+    user_c=models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.product}-{self.product.title}'
