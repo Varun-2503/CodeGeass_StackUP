@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Kenia&display=swap');
+
+* {
+    margin: 0 ;
+    box-sizing: border-box;
+    font-family: 'Kenia', sans-serif;
+    
+}
+
+.homepg{
+    background-color: #212529
+} 
+
+.home-navbar{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+
+

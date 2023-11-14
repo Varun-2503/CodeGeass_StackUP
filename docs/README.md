@@ -1,2 +1,1 @@
-# Docs
-Document the project with extreme prejudice !
+explain each feature of the e commerce app with precision
